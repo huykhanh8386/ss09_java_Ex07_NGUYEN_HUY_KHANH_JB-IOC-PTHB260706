@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Ex07Session09Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("===== TIỆN ÍCH TÍNH TOÁN HÌNH HỌC =====");
+        System.out.print("Nhập bán kính r (cm): ");
+        double r = Double.parseDouble(scanner.nextLine());
+        System.out.print("Nhập chiều cao h (cm): ");
+        double h = Double.parseDouble(scanner.nextLine());
+        if (r <= 0 || h <= 0) {
+            System.out.println("Lỗi: Bán kính và chiều cao phải lớn hơn 0!");
+            scanner.close();
+            return;
+        }
+        double perimeter = Ex07Session.circlePerimeter(r);
+        double area = Ex07Session.circleArea(r);
+        double volume = Ex07Session.cylinderVolume(r, h);
+        System.out.println();
+        System.out.println("+-------------------------------------------------------+");
+        System.out.println("|        BÁO CÁO THỐNG KÊ HÌNH HỌC ĐƯỜNG TRÒN         |");
+        System.out.println("+-------------------------------------------------------+");
+        System.out.printf("| Bán kính (r):              %.2f cm%n", r);
+        System.out.printf("| Chiều cao trụ (h):         %.2f cm%n", h);
+        System.out.println("|-------------------------------------------------------|");
+        System.out.printf("| CHU VI HÌNH TRÒN:          %.2f cm%n", perimeter);
+        System.out.printf("| DIỆN TÍCH HÌNH TRÒN:       %.2f cm2%n", area);
+        System.out.printf("| THỂ TÍCH HÌNH TRỤ:         %.2f cm3%n", volume);
+        System.out.println("+-------------------------------------------------------+");
+    }
+}
